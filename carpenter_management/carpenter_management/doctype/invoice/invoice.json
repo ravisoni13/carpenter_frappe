@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "INV_.#####",
+ "creation": "2025-01-29 15:17:30.655795",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client",
+  "column_break_stzg",
+  "project",
+  "column_break_btxv",
+  "estimate_date",
+  "section_break_kuru",
+  "furniture_item_list",
+  "section_break_gvcw",
+  "amended_from",
+  "column_break_vvww",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_stzg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project.client_name",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client ",
+   "options": "Client Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project ",
+   "placeholder": "Enter Project Name"
+  },
+  {
+   "fieldname": "column_break_btxv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kuru",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "furniture_item_list",
+   "fieldtype": "Table",
+   "label": "Furniture Item LIst",
+   "options": "Furniture Item Child",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "estimate_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date ",
+   "placeholder": "Current Date"
+  },
+  {
+   "fieldname": "section_break_gvcw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_vvww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-31 11:13:56.238026",
+ "modified_by": "Administrator",
+ "module": "Carpenter Management",
+ "name": "Invoice",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project"
+}

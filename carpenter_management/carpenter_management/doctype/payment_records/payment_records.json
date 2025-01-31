@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project}-{invoice_id}",
+ "creation": "2025-01-30 14:11:32.681860",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_id",
+  "column_break_josc",
+  "project",
+  "column_break_asgy",
+  "client",
+  "section_break_xfou",
+  "payment_date",
+  "column_break_mxml",
+  "total_invoice_amount",
+  "column_break_lsmr",
+  "balance_amount",
+  "section_break_gskh",
+  "payment_installments",
+  "total_amount_paid"
+ ],
+ "fields": [
+  {
+   "fetch_from": "invoice_id.project",
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "invoice_id.client",
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_id",
+   "fieldtype": "Link",
+   "label": "Invoice Id",
+   "options": "Invoice",
+   "unique": 1
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "total_amount_paid",
+   "fieldtype": "Data",
+   "label": "Total Amount Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "balance_amount",
+   "fieldtype": "Currency",
+   "label": "Balance Amount",
+   "non_negative": 1,
+   "placeholder": "Pending Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "invoice_id.final_amount",
+   "fieldname": "total_invoice_amount",
+   "fieldtype": "Currency",
+   "label": "Total Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_josc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_asgy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xfou",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mxml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lsmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gskh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_installments",
+   "fieldtype": "Table",
+   "label": "Payment Installments",
+   "options": "Payment Installments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-30 16:40:50.673433",
+ "modified_by": "Administrator",
+ "module": "Carpenter Management",
+ "name": "Payment Records",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

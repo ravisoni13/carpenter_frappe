@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-29 15:39:46.449296",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "height",
+  "width",
+  "column_break_oqcb",
+  "unit",
+  "rate",
+  "nos",
+  "column_break_kone",
+  "qty",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "\nSq. ft.\nNos"
+  },
+  {
+   "fieldname": "nos",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Nos",
+   "precision": "1"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Height",
+   "placeholder": "Dimensions (e.g., \"xft x yft \")sq. ft.",
+   "precision": "1"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Width",
+   "placeholder": "Dimensions (e.g., \"xft x yft \")sq. ft.",
+   "precision": "1"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Furniture Name",
+   "placeholder": "Furniture Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oqcb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kone",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qty",
+   "precision": "9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-31 11:31:48.516630",
+ "modified_by": "Administrator",
+ "module": "Carpenter Management",
+ "name": "Furniture Item Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

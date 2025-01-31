@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-29 15:44:08.444817",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "machine_name",
+  "qyt",
+  "column_break_ftqm",
+  "daily_rent",
+  "total_days",
+  "total_rental_cost",
+  "column_break_ynol",
+  "rental_start_date",
+  "rental_end_date"
+ ],
+ "fields": [
+  {
+   "fetch_from": "machine_name.per_day_rent",
+   "fieldname": "daily_rent",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Rent"
+  },
+  {
+   "fieldname": "column_break_ftqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_rental_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Rental Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rental_end_date",
+   "fieldtype": "Date",
+   "label": "Rental End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qyt",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qyt"
+  },
+  {
+   "fieldname": "column_break_ynol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machine_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Machine Name",
+   "options": "Machines"
+  },
+  {
+   "fieldname": "rental_start_date",
+   "fieldtype": "Date",
+   "label": "Rental Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Days",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-30 17:22:07.877574",
+ "modified_by": "Administrator",
+ "module": "Carpenter Management",
+ "name": "Rental  Expense Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
