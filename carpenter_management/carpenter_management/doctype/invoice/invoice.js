@@ -13,7 +13,6 @@
 //         frm.set_value('total_amount', total_amount);
 //     }
 // });
-
 frappe.ui.form.on('Furniture Item Child', {
     rate: function(frm, cdt, cdn) {
         update_amount(frm, cdt, cdn);  // Update the amount when rate changes
@@ -46,38 +45,48 @@ function calculate_total_amount(frm) {
 }
 
 
+
+
 // frappe.ui.form.on('Invoice', {
-//     validate: function(frm) {
-//         calculate_total_amount(frm);
+//     refresh: function(frm) {
+//         // Add a custom button to the form
+//         frm.add_custom_button(__('Create Payment Order'), function() {
+//             create_payment_order(frm);
+//         });
 //     }
 // });
 
-// frappe.ui.form.on('Furniture Item Child', {
-//     rate: function(frm, cdt, cdn) {
-//         update_amount(frm, cdt, cdn);
-//     },
-//     qty: function(frm, cdt, cdn) {
-//         update_amount(frm, cdt, cdn);
-//     },
-//     nos: function(frm, cdt, cdn) {
-//         update_amount(frm, cdt, cdn);
-//     }
-// });
+// function create_payment_order(frm) {
+//     let payment_order = frappe.model.get_new_doc('Payment');
+//     payment_order.client_name = frm.doc.client;  // Client Name
+//     payment_order.project_name = frm.doc.project;  // Project Name
+//     payment_order.balance = frm.doc.total_amount;  // Balance / Total Amount
 
-// function update_amount(frm, cdt, cdn) {
-//     let row = locals[cdt][cdn];  // Get the specific row
-//     row.amount = row.rate * row.qty * row.nos;
 
-//     frm.refresh_field('furniture_item_list'); // Refresh the table
-//     calculate_total_amount(frm); // Recalculate total
+//     frappe.set_route('Form', 'Payment', payment_order.name);
 // }
+frappe.ui.form.on('Invoice', {
+    refresh: function(frm) {
+        // Add a custom button to the form
+        frm.add_custom_button(__('Create Payment Order'), function() {
+            // Check if the document is saved
+            if (frm.doc.__unsaved) {
+                frappe.msgprint(__('Please save the invoice first.'));
+                return;
+            }
+            create_payment_order(frm);
+        });
+    }
+});
 
-// function calculate_total_amount(frm) {
-//     let total_amount = 0;
+function create_payment_order(frm) {
+    let payment_order = frappe.model.get_new_doc('Payment');
+    
+    // Set values from the Invoice document
+    payment_order.client_name = frm.doc.client;  // Client Name
+    payment_order.project_name = frm.doc.project;  // Project Name
+    payment_order.balance = frm.doc.total_amount;  // Balance / Total Amount
 
-//     frm.doc.furniture_item_list.forEach(i => {
-//         total_amount += i.amount;
-//     });
-
-//     frm.set_value('total_amount', total_amount);
-// }
+    // Set the route to navigate to the new Payment document
+    frappe.set_route('Form', 'Payment', payment_order.name);
+}

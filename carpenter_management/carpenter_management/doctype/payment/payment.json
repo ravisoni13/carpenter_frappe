@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Payment.####",
+ "creation": "2025-01-31 15:12:32.893216",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "column_break_qjfm",
+  "client_name",
+  "section_break_biwt",
+  "balance",
+  "current_date",
+  "invoice_id",
+  "payment_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "column_break_qjfm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Client Name"
+  },
+  {
+   "fieldname": "section_break_biwt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Balance"
+  },
+  {
+   "fieldname": "current_date",
+   "fieldtype": "Date",
+   "label": "Current Date"
+  },
+  {
+   "fieldname": "invoice_id",
+   "fieldtype": "Date",
+   "label": "Invoice Id"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nOnline Pay\nBank Transfer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-31 17:19:53.729879",
+ "modified_by": "Administrator",
+ "module": "Carpenter Management",
+ "name": "Payment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

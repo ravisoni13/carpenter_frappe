@@ -11,15 +11,28 @@ class Invoice(Document):
     # def before_save(self):
     #     self.calculate_all()
         
+    # def validate(self):
+    #     total_amount = 0
+    #     for i in self.furniture_item_list: 
+    #         i.amount =  i.rate  * i.qty * i.nos
+    #         total_amount += i.amount
+                
+    #     self.total_amount =  total_amount    
+    
     def validate(self):
         total_amount = 0
-        for i in self.furniture_item_list: 
-            i.amount =  i.rate  * i.qty * i.nos
-            total_amount += i.amount
-                
-        self.total_amount =  total_amount    
-    
-    
+        for i in self.furniture_item_list:
+            if i.unit == "Sq.ft.":
+                i.qty = (i.height * i.width) / 144  # Convert to square feet
+            
+            else:
+                i.qty = i.qty  # Default quantity for other units
+
+            i.amount = i.rate * i.qty * i.nos  # Calculate amount
+            total_amount += i.amount  # Accumulate total
+
+        self.total_amount = total_amount  # Set total after loop completes
+
     
     
     # def before_save(self):
